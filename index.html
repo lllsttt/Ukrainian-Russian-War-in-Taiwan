@@ -14,7 +14,6 @@
         /* ==========================================================================
            🎨 DATA JOURNALISM STYLE SHEET - COFFEE THEME (COMBINED STYLE)
            ========================================================================== */
-
         :root {
             --bg-color-deep: #140d0a;         /* 極深咖啡豆色 */
             --bg-color-main: #1e130f;         /* 主背景深咖啡色 */
@@ -27,14 +26,12 @@
             --glass-bg: rgba(30, 19, 15, 0.7);
             --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
-
         /* Base Settings */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
         html, body {
             margin: 0;
             padding: 0;
@@ -43,13 +40,11 @@
             overflow: hidden;
             background-color: var(--bg-color-deep);
         }
-
         body {
             color: var(--text-primary);
             font-family: 'Noto Sans TC', sans-serif;
             line-height: 1.8;
         }
-
         .editor-fullscreen-scroller {
             width: 100%;
             height: 100vh;
@@ -58,12 +53,10 @@
             background: radial-gradient(circle at center, var(--bg-color-main) 0%, var(--bg-color-deep) 100%);
             padding-bottom: 80px;
         }
-
         /* Typography Helpers */
         .serif-font {
             font-family: 'Noto Serif TC', serif;
         }
-
         /* Main Container */
         .report-container {
             max-width: 900px;
@@ -71,7 +64,6 @@
             padding: 40px 24px;
             text-align: center; /* Centered layout */
         }
-
         /* Title Section */
         .report-title {
             font-size: 2.8rem;
@@ -85,7 +77,6 @@
             display: inline-block;
             padding-bottom: 15px;
         }
-
         .report-title::after {
             content: '';
             position: absolute;
@@ -95,7 +86,6 @@
             height: 3px;
             background: linear-gradient(90deg, transparent, var(--primary-red), transparent);
         }
-
         /* Table Design */
         .table-wrapper {
             margin: 40px 0 20px 0;
@@ -108,13 +98,11 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
-
         .quotes-table {
             width: 100%;
             border-collapse: collapse;
             text-align: left; /* Left align for readable text inside table */
         }
-
         .quotes-table th {
             background-color: rgba(255, 82, 82, 0.08);
             color: var(--accent-gold);
@@ -125,7 +113,6 @@
             letter-spacing: 1px;
             text-align: center;
         }
-
         .quotes-table td {
             padding: 16px 24px;
             font-size: 1rem;
@@ -134,17 +121,14 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             transition: var(--transition-smooth);
         }
-
         .quotes-table tr:hover td {
             background-color: rgba(255, 255, 255, 0.03);
         }
-
         /* Red Keyword Highlight */
         .red-highlight {
             color: var(--primary-red);
             font-weight: 600;
         }
-
         /* Table Source & Note */
         .meta-info {
             text-align: left;
@@ -159,19 +143,15 @@
             color: var(--text-secondary);
             box-shadow: inset 0 1px 0 rgba(255,255,255,0.01);
         }
-
         .meta-info p {
             margin-bottom: 8px;
         }
-
         .meta-info p:last-child {
             margin-bottom: 0;
         }
-
         .meta-info strong {
             color: var(--text-primary);
         }
-
         /* Body Text Section */
         .report-content {
             max-width: 760px;
@@ -181,12 +161,10 @@
             color: var(--text-primary);
             text-align: left; /* Left-aligned paragraphs */
         }
-
         .report-content p {
             margin-bottom: 35px;
             letter-spacing: 0.5px;
         }
-
         /* Enlarged Bold Red Thought Highlight */
         .emphasis-mind {
             font-size: 1.3em;
@@ -197,7 +175,6 @@
             padding: 0 8px;
             margin: 5px 0;
         }
-
         /* Footer Section */
         footer {
             margin-top: 100px;
@@ -207,7 +184,6 @@
             color: var(--text-secondary);
             font-size: 0.9rem;
         }
-
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .report-title {
@@ -230,7 +206,6 @@
 </head>
 <body>
     <div class="editor-fullscreen-scroller">
-
         <!-- 捲動式影片：0616報導開頭 --><style></style><div id="jhqgj">
             
             <div id="95ddd9fe-f549-433a-9c7c-81c28cd31390"></div>
@@ -373,7 +348,6 @@
             </script>
             <script type="text/javascript" defer crossorigin src="https://cdn.jsdelivr.net/npm/@story-telling-reporter/react-embed-code-generator@2.2.20/dist/scrollable-video.js"></script>
           </div>
-
         <!-- Main Content Container -->
         <main class="report-container">
             
@@ -422,13 +396,11 @@
                     </tbody>
                 </table>
             </div>
-
             <!-- Table Metadata and Notes -->
             <div class="meta-info">
                 <p><strong>資料來源：</strong>中央社、公視、TVBS、三立的網路新聞平台（烏俄戰事涉台新聞），擷取「將烏俄戰況對比台海」相關報導段落。</p>
                 <p><strong>註：</strong>資料抓取使用 google site search 抓取報導中有「"俄" OR "烏"」以及「"台灣" OR "我國"」的報導，而後人工篩選報導段落。</p>
             </div>
-
             <!-- Center Aligned Inner Body Text Section -->
             <section class="report-content">
                 <p>
@@ -441,14 +413,11 @@
                     這些「借鏡」七零八落，散落在各家媒體的報導中。所以此專題藉由烏俄戰爭討論台灣國防與民防安全的報導，從四大面向搜集了13個熱門話題。
                 </p>
             </section>
-
         </main>
-
         <!-- Footer -->
         <footer>
             <p>&copy; 2026 資料新聞網頁設計專題. All Rights Reserved.</p>
         </footer>
-
     </div>
 </body>
 </html>
