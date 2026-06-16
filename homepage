@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日烏克蘭，明日台灣？——資料新聞報導</title>
+    
+    <!-- Google Fonts for professional Chinese typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           🎨 DATA JOURNALISM STYLE SHEET - COFFEE THEME (COMBINED STYLE)
+           ========================================================================== */
+
+        :root {
+            --bg-color-deep: #140d0a;         /* 極深咖啡豆色 */
+            --bg-color-main: #1e130f;         /* 主背景深咖啡色 */
+            --bg-color-light: #2c1d17;        /* 淺咖啡褐 */
+            --text-primary: #f5f0eb;          /* 暖乳白 */
+            --text-secondary: #c7bcae;        /* 暖灰褐（次要字） */
+            --primary-red: #ff5252;           /* 戰火明紅（高對比，非死紅） */
+            --accent-gold: #ffffff;           /* 警示白色 */
+            --border-color: rgba(255, 255, 255, 0.08);
+            --glass-bg: rgba(30, 19, 15, 0.7);
+            --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* Base Settings */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: var(--bg-color-deep);
+        }
+
+        body {
+            color: var(--text-primary);
+            font-family: 'Noto Sans TC', sans-serif;
+            line-height: 1.8;
+        }
+
+        .editor-fullscreen-scroller {
+            width: 100%;
+            height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background: radial-gradient(circle at center, var(--bg-color-main) 0%, var(--bg-color-deep) 100%);
+            padding-bottom: 80px;
+        }
+
+        /* Typography Helpers */
+        .serif-font {
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        /* Main Container */
+        .report-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            text-align: center; /* Centered layout */
+        }
+
+        /* Title Section */
+        .report-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--text-primary);
+            margin-bottom: 40px;
+            margin-top: 20px;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .report-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-red), transparent);
+        }
+
+        /* Table Design */
+        .table-wrapper {
+            margin: 40px 0 20px 0;
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .quotes-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left; /* Left align for readable text inside table */
+        }
+
+        .quotes-table th {
+            background-color: rgba(255, 82, 82, 0.08);
+            color: var(--accent-gold);
+            padding: 18px 24px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .quotes-table td {
+            padding: 16px 24px;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-primary);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition-smooth);
+        }
+
+        .quotes-table tr:hover td {
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .two-col-table {
+            min-width: 650px;
+        }
+
+        /* Red Keyword Highlight */
+        .red-highlight {
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+
+        /* Table Source & Note */
+        .meta-info {
+            text-align: left;
+            margin: 0 auto 50px auto;
+            max-width: 850px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 4px solid var(--accent-gold);
+            padding: 18px 24px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.01);
+        }
+
+        .meta-info p {
+            margin-bottom: 8px;
+        }
+
+        .meta-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .meta-info strong {
+            color: var(--text-primary);
+        }
+
+        /* Body Text Section */
+        .report-content {
+            max-width: 760px;
+            margin: 40px auto 0 auto;
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--text-primary);
+            text-align: left; /* Left-aligned paragraphs */
+        }
+
+        .report-content p {
+            margin-bottom: 35px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Enlarged Bold Red Thought Highlight */
+        .emphasis-mind {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--primary-red);
+            text-shadow: 0 0 12px rgba(255, 82, 82, 0.25);
+            display: inline-block;
+            padding: 0 8px;
+            margin: 5px 0;
+        }
+
+        /* Footer Section */
+        footer {
+            margin-top: 100px;
+            border-top: 1px solid var(--border-color);
+            padding: 45px 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .report-title {
+                font-size: 2rem;
+            }
+            .quotes-table th, .quotes-table td {
+                padding: 12px 16px;
+                font-size: 0.95rem;
+            }
+            .meta-info {
+                padding: 14px 18px;
+                font-size: 0.85rem;
+            }
+            .report-content {
+                font-size: 1.05rem;
+                line-height: 1.8;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="editor-fullscreen-scroller">
+
+        <!-- 捲動式影片：0616報導開頭 --><style></style><div id="jhqgj">
+            
+            <div id="95ddd9fe-f549-433a-9c7c-81c28cd31390"></div>
+            <script>
+              (function() {
+                var namespace = '@story-telling-reporter/react-embed-code-generator@2.2.20';
+                var pkg = 'scrollable-video';
+                if (typeof window != 'undefined') {
+                  if (!window.hasOwnProperty(namespace)) {
+                    window[namespace] = {};
+                  }
+                  if (window[namespace] && !window[namespace].hasOwnProperty(pkg)) {
+                    window[namespace][pkg] = [];
+                  }
+                  if (Array.isArray(window[namespace][pkg])) {
+                    var embedEl = document.getElementById('95ddd9fe-f549-433a-9c7c-81c28cd31390');
+                    var scrollerEl = embedEl && embedEl.closest('.editor-fullscreen-scroller');
+                    var scrollerRef = scrollerEl ? { current: scrollerEl } : undefined;
+                    var data = {
+                      video: {
+                        src: 'https://lab-storytelling-storage.twreporter.org/files/-------------sA1lvpYEdkiw.mp4',
+                        mobileSrc: '',
+                        duration: 8
+                      },
+                      captions: [
+                        {
+                          id: 'abimb',
+                          width: 'wide',
+                          alignment: 'center',
+                          startTime: 4.74,
+                          rawContentState: {
+                            blocks: [
+                              {
+                                key: '6audr',
+                                data: {},
+                                text: '2022年2月24日，當俄羅斯戰車駛入烏克蘭領土，遠在八千公里外的台灣，也透過媒體即時收到大量戰事相關消息。這場第二次世界大戰結束以來歐洲最大規模的軍事衝突，至今已推進到第四個年頭。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [],
+                                inlineStyleRanges: []
+                              }
+                            ],
+                            entityMap: {}
+                          }
+                        },
+                        {
+                          id: 'kdonf',
+                          width: 'wide',
+                          alignment: 'center',
+                          startTime: 6,
+                          rawContentState: {
+                            blocks: [
+                              {
+                                key: '7avfv',
+                                data: {},
+                                text: '而台灣人看這場戰爭，除了同情烏克蘭的遭遇，也憂心同樣面對著強鄰威脅的自己。「今日烏克蘭，明日台灣」的口號於是開始在社群平台上傳播開來，顯現台灣人反思自身需要加強防衛抵抗境外勢力入侵的決心。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [
+                                  { style: 'BOLD', length: 12, offset: 37 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 12, offset: 37 }
+                                ],
+                                inlineStyleRanges: []
+                              }
+                            ],
+                            entityMap: {}
+                          }
+                        },
+                        {
+                          id: 'pbgdc',
+                          width: 'wide',
+                          alignment: 'center',
+                          startTime: 7.21,
+                          rawContentState: {
+                            blocks: [
+                              {
+                                key: 'fjq2d',
+                                data: {},
+                                text: '本報導蒐集台灣四家媒體——國家通訊社中央社、公共媒體公視新聞網、前兩大泛藍與泛綠電視媒體TVBS及三立的網路新聞平台——在過去四年間（2022/02/24-2026/02/24）所有提及「台灣」的烏俄戰爭報導。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [{ key: 0, length: 45, offset: 60 }],
+                                inlineStyleRanges: [
+                                  { style: 'BOLD', length: 8, offset: 13 },
+                                  { style: 'BOLD', length: 9, offset: 22 },
+                                  { style: 'BOLD', length: 16, offset: 32 },
+                                  { style: 'BOLD', length: 2, offset: 49 },
+                                  { style: 'BOLD', length: 45, offset: 60 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 3, offset: 18 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 5, offset: 26 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 4, offset: 44 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 2, offset: 49 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 13, offset: 91 }
+                                ]
+                              },
+                              {
+                                key: '4idoa',
+                                data: {},
+                                text: '透過分析報導內容，看台灣媒體如何透過萬里戰火，照見自身的國防安全、外交身分，以及國內撕裂的安全戰略路線。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [],
+                                inlineStyleRanges: []
+                              }
+                            ],
+                            entityMap: {
+                              0: {
+                                data: {
+                                  rawContentState: {
+                                    blocks: [
+                                      {
+                                        key: '7om2o',
+                                        data: {},
+                                        text: '註：資料抓取使用google site search抓取報導中有「\"俄\" OR \"烏\"」以及「“台灣\" OR “我國"」的報導，而後人工標籤與擷取報導段落。',
+                                        type: 'unstyled',
+                                        depth: 0,
+                                        entityRanges: [],
+                                        inlineStyleRanges: []
+                                      }
+                                    ],
+                                    entityMap: {}
+                                  }
+                                },
+                                type: 'ANNOTATION',
+                                mutability: 'MUTABLE'
+                              }
+                            }
+                          }
+                        }
+                      ],
+                      darkMode: true,
+                      secondsPer100vh: 1.5,
+                      uuid: '95ddd9fe-f549-433a-9c7c-81c28cd31390'
+                    };
+                    data.scrollerRef = scrollerRef;
+                    window[namespace][pkg].push(data);
+                  }
+                }
+              })()
+            </script>
+            <script type="text/javascript" defer crossorigin src="https://cdn.jsdelivr.net/npm/@story-telling-reporter/react-embed-code-generator@2.2.20/dist/scrollable-video.js"></script>
+          </div>
+
+        <!-- Main Content Container -->
+        <main class="report-container">
+            
+            <!-- Document Title -->
+            <h1 class="report-title serif-font">今日烏克蘭，明日台灣？</h1>
+            
+            <!-- Quotes Comparison Table -->
+            <div class="table-wrapper">
+                <table class="quotes-table serif-font">
+                    <thead>
+                        <tr>
+                            <th style="text-align: center;">涉台新聞對比報導段落擷取</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>「<span class="red-highlight">俄羅斯</span>以大量無人機攻擊<span class="red-highlight">烏克蘭</span>，對<span class="red-highlight">台灣</span>是一記警鐘，若<span class="red-highlight">中國</span>對台動武，類似景象也可能出現在<span class="red-highlight">台灣</span>。」</td>
+                        </tr>
+                        <tr>
+                            <td>「如果<span class="red-highlight">俄羅斯</span>打<span class="red-highlight">烏克蘭</span>幾乎是輾壓，可能幾天內結束，那<span class="red-highlight">中國</span>如果打<span class="red-highlight">台灣</span>要幾天？」</td>
+                        </tr>
+                        <tr>
+                            <td>「對<span class="red-highlight">台灣</span>人來說，普丁對<span class="red-highlight">烏克蘭</span>做的事，可能就是習近平將對<span class="red-highlight">台灣</span>做的事。」</td>
+                        </tr>
+                        <tr>
+                            <td>「當<span class="red-highlight">俄羅斯</span>攻打<span class="red-highlight">烏克蘭</span>的同時，有類似狀況的<span class="red-highlight">中國</span>與<span class="red-highlight">台灣</span>是否也可能一不小心就『擦槍走火』」</td>
+                        </tr>
+                        <tr>
+                            <td>「<span class="red-highlight">俄烏</span>戰爭預告<span class="red-highlight">中國</span>怎麼對付<span class="red-highlight">台灣</span>，如何防範<span class="red-highlight">台海</span>局勢變化？」</td>
+                        </tr>
+                        <tr>
+                            <td>「<span class="red-highlight">烏俄</span>這一戰，可能會是<span class="red-highlight">台灣</span>與<span class="red-highlight">中國大陸</span>的借鏡」</td>
+                        </tr>
+                        <tr>
+                            <td>「<span class="red-highlight">烏克蘭</span>战事引發<span class="red-highlight">台海</span>安全聯想。」</td>
+                        </tr>
+                        <tr>
+                            <td>「隨著<span class="red-highlight">俄烏</span>戰爭越演越烈，<span class="red-highlight">台灣</span>與<span class="red-highlight">台海</span>安全也備受各界關注。」</td>
+                        </tr>
+                        <tr>
+                            <td>「<span class="red-highlight">中國</span>亦步亦趨地學習<span class="red-highlight">俄羅斯</span>的手法，不斷對外擴張，是極為明顯的事。」</td>
+                        </tr>
+                        <tr>
+                            <td>「<span class="red-highlight">烏克蘭</span>與<span class="red-highlight">台灣</span>在某種程度上有著相似的處境。」</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Table Metadata and Notes -->
+            <div class="meta-info">
+                <p><strong>資料來源：</strong>中央社、公視、TVBS、三立的網路新聞平台（烏俄戰事涉台新聞），擷取「將烏俄戰況對比台海」相關報導段落。</p>
+                <p><strong>註：</strong>資料抓取使用 google site search 抓取報導中有「"俄" OR "烏"」以及「"台灣" OR "我國"」的報導，而後人工篩選報導段落。</p>
+            </div>
+
+            <!-- Center Aligned Inner Body Text Section -->
+            <section class="report-content">
+                <p>
+                    瀏覽近四年（2022-2026）來的國際新聞，你可能對上表中的語句感到似曾相識。這些報導內容將八千公里外的砲火，生硬地與台海兩岸的緊張局勢劃上等號。當我們抱著警戒與焦慮的心情瀏覽完這上百篇的新聞，除了萌生「<span class="emphasis-mind">俄羅斯＝中國、烏克蘭＝台灣</span>」的思緒外，我們真的能從烏俄戰事中看出台灣值得學習之處嗎？
+                </p>
+                <p>
+                    這些「借鏡」七零八落，散落在各家媒體的報導中。並且，在烏俄戰爭涉台的309篇報導中，單純的國家防衛借鏡報導僅佔兩成，多數報導皆會牽涉「政治」。對此，<strong>（國立政治大學研究戰爭新聞的新聞系教授游絲涵指出，台灣媒體對烏俄戰爭的處理，本質上更偏向「國際政治新聞」，而非「戰爭報導」。）</strong>
+                </p>
+                <p>
+                    因此，本專題首先將藉由烏俄戰爭討論到台灣國防與民防安全的報導，從四大面向搜集了13個熱門話題，了解現代戰場的實際演變及需求。
+                </p>
+            </section>
+
+        </main>
+
+        <!-- 捲動式影片：0616面向一 --><style></style><div id="cpcnc">
+            
+            <div id="41abcd7b-adfa-4308-b967-8c446af08bea"></div>
+            <script>
+              (function() {
+                var namespace = '@story-telling-reporter/react-embed-code-generator@2.2.20';
+                var pkg = 'scrollable-video';
+                if (typeof window != 'undefined') {
+                  if (!window.hasOwnProperty(namespace)) {
+                    window[namespace] = {};
+                  }
+                  if (window[namespace] && !window[namespace].hasOwnProperty(pkg)) {
+                    window[namespace][pkg] = [];
+                  }
+                  if (Array.isArray(window[namespace][pkg])) {
+                    var embedEl = document.getElementById('41abcd7b-adfa-4308-b967-8c446af08bea');
+                    var scrollerEl = embedEl && embedEl.closest('.editor-fullscreen-scroller');
+                    var scrollerRef = scrollerEl ? { current: scrollerEl } : undefined;
+                    var data = {
+                      video: {
+                        src: 'https://lab-storytelling-storage.twreporter.org/files/----------MeQmnn3_1ZfS.mp4',
+                        mobileSrc: '',
+                        duration: 15
+                      },
+                      captions: [
+                        {
+                          id: 'fihma',
+                          width: 'narrow',
+                          alignment: 'left',
+                          startTime: 0.57,
+                          rawContentState: {
+                            blocks: [
+                              {
+                                key: '56pki',
+                                data: {},
+                                text: '首先可以看出，媒體不純然是中立地借鏡這場戰事來強化自己的國防、民防，超過五成（54%）的新聞，直接將中共設定為假想敵，帶著抗中意識在轉譯這場遠方戰火。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [],
+                                inlineStyleRanges: [
+                                  { style: 'BOLD', length: 24, offset: 34 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 24, offset: 34 }
+                                ]
+                              }
+                            ],
+                            entityMap: {}
+                          }
+                        },
+                        {
+                          id: 'oalah',
+                          width: 'narrow',
+                          alignment: 'left',
+                          startTime: 1.4,
+                          rawContentState: {
+                            blocks: [
+                              {
+                                key: '2q43g',
+                                data: {},
+                                text: '在國防安全相關的報導，版面幾乎被「無人機與國防自主」佔據，這也催生了台灣「無人機國家隊」的跨部會建制，顯示在這場戰事的借鏡之下，台灣最希望立即提升無人機自造的能力。討論度次之的「兵役制度」，將烏克蘭的持久戰與台灣「義務役期恢復一年」的內容交織在一起。因應中共威脅，政府也喊出將把國防預算大幅拉高，並積極發展「不對稱戰力」，以彌補我國與中共的軍事實力差距。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [],
+                                inlineStyleRanges: [
+                                  { style: 'BOLD', length: 4, offset: 1 },
+                                  { style: 'BOLD', length: 10, offset: 16 },
+                                  { style: 'BOLD', length: 6, offset: 88 },
+                                  { style: 'BOLD', length: 7, offset: 153 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 10, offset: 16 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 6, offset: 88 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 7, offset: 153 }
+                                ]
+                              }
+                            ],
+                            entityMap: {}
+                          }
+                        },
+                        {
+                          id: 'kgaqm',
+                          width: 'narrow',
+                          alignment: 'left',
+                          startTime: 2.4,
+                          rawContentState: {
+                            blocks: [
+                              {
+                                key: '9iq6v',
+                                data: {},
+                                text: '在民防安全方面，一項核心話題為「抗敵意志」。報導不斷藉烏克蘭平民對抗強鄰的論述，同時對國內社會進行精神動員。此外也有不少記者採訪到烏克蘭籍人士，以參與過戰火的人士提出實質建議，試圖解決民眾面對戰爭的恐慌。話題主要圍繞在全民國防相關實務，從烏俄戰事開戰初期，台灣民眾積極查詢「防空避難專區」、政府發放《全民國防手冊》、乃至志願軍與女性從軍的相關討論。到了後期，話題則延伸至如何引導民眾在戰時維持日常民生生活、防範境外敵意勢力的「認知作戰」，還引述烏克蘭專家建議，呼籲台灣應發展民防團體，並訓練民眾從小學習操作無人機。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [],
+                                inlineStyleRanges: [
+                                  { style: 'BOLD', length: 4, offset: 1 },
+                                  { style: 'BOLD', length: 6, offset: 15 },
+                                  { style: 'BOLD', length: 8, offset: 109 },
+                                  { style: 'BOLD', length: 6, offset: 212 },
+                                  { style: 'BOLD', length: 5, offset: 251 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 6, offset: 15 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 8, offset: 109 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 6, offset: 212 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 5, offset: 251 }
+                                ]
+                              }
+                            ],
+                            entityMap: {}
+                          }
+                        },
+                        {
+                          id: 'fkbfn',
+                          width: 'wide',
+                          alignment: 'center',
+                          startTime: 12.45,
+                          rawContentState: {
+                            blocks: [
+                              {
+                                key: 'c1aad',
+                                data: {},
+                                text: '數據顯示，在四家媒體134篇聲援烏克蘭的報導中，超過六成的新聞，在聲援烏克蘭的同時，會提及台灣同烏克蘭為「民主陣營的一員」、強調「國際需重視台海安全」、或指控「中俄是威脅聯盟」。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [],
+                                inlineStyleRanges: [
+                                  { style: 'BOLD', length: 4, offset: 24 },
+                                  { style: 'BOLD', length: 9, offset: 52 },
+                                  { style: 'BOLD', length: 11, offset: 64 },
+                                  { style: 'BOLD', length: 9, offset: 79 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 9, offset: 52 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 11, offset: 64 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 9, offset: 79 }
+                                ]
+                              }
+                            ],
+                            entityMap: {}
+                          }
+                        },
+                        {
+                          id: 'gbggn',
+                          width: 'wide',
+                          alignment: 'center',
+                          startTime: 13.45,
+                          rawContentState: {
+                            blocks: [
+                              {
+                                key: 'a445q',
+                                data: {},
+                                text: '在四年間的報導中，強調台灣與全球民主陣營同一陣線的報導共計44篇，其中超過半數（56.8%）來自台灣總統或政府部門的官方發言。在這些報導中，台灣官員頻繁使用「民主夥伴」、「理念相近國家」、與「價值同盟」等詞彙。而台灣民間也不斷強調自由、人權、和平等價值。透過這些報導，可以看見台灣透過烏俄戰事，點亮自己作為「民主燈塔」的身分標籤。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [],
+                                inlineStyleRanges: [
+                                  { style: 'BOLD', length: 1, offset: 24 },
+                                  { style: 'BOLD', length: 23, offset: 78 },
+                                  { style: 'BOLD', length: 8, offset: 115 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 27, offset: 35 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 6, offset: 153 }
+                                ]
+                              }
+                            ],
+                            entityMap: {}
+                          }
+                        }
+                      ],
+                      darkMode: true,
+                      secondsPer100vh: 1.5,
+                      uuid: '41abcd7b-adfa-4308-b967-8c446af08bea'
+                    };
+                    data.scrollerRef = scrollerRef;
+                    window[namespace][pkg].push(data);
+                  }
+                }
+              })()
+            </script>
+            <script type="text/javascript" defer crossorigin src="https://cdn.jsdelivr.net/npm/@story-telling-reporter/react-embed-code-generator@2.2.20/dist/scrollable-video.js"></script>
+          </div>
+
+        <!-- Section 2: Table & Paragraphs below the second video -->
+        <div class="report-container">
+            
+            <!-- Second Quotes Comparison Table -->
+            <div class="table-wrapper">
+                <table class="quotes-table two-col-table serif-font">
+                    <thead>
+                        <tr>
+                            <th colspan="2" style="text-align: center;">台灣在聲援烏克蘭的同時，也在強化民主陣營的身份</th>
+                        </tr>
+                        <tr>
+                            <th style="width: 50%; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">官方發言</th>
+                            <th style="width: 50%; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); border-left: 1px solid rgba(255,255,255,0.1);">民間發言</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="vertical-align: top; border-right: 1px solid rgba(255,255,255,0.05);">「在<span class="red-highlight">俄烏</span>戰爭中，<span class="red-highlight">中國</span>正是國際社會公認的<span class="red-highlight">俄羅斯</span>關鍵協力者，呼籲國際社會共同正視，並期盼<span class="red-highlight">俄烏</span>戰爭早日結束，讓<span class="red-highlight">烏克蘭</span>人民脫離戰火與苦難。」</td>
+                            <td style="vertical-align: top;">「<span class="red-highlight">俄烏</span>戰爭讓歐洲人了解，遠在天邊的<span class="red-highlight">台灣</span>及和<span class="red-highlight">中國</span>的牽動關係，跟<span class="red-highlight">俄烏</span>戰爭和近在咫尺的歐洲的變化，事實上是息息相關。」</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top; border-right: 1px solid rgba(255,255,255,0.05);">「<span class="red-highlight">俄烏</span>戰事促成國際社會更加重視<span class="red-highlight">台灣</span>價值及關注<span class="red-highlight">中國</span>侵台意圖，<span class="red-highlight">台灣</span>在印太區域活動能量儼然成為民主陣營對抗威權影響力的關鍵制衡因素之一。」</td>
+                            <td style="vertical-align: top;">「我們有能力去援助其他人，讓人知道我們有同樣的價值觀，並藉此累積技術、人脈，這都是在重要狀況下，我們不會孤立無援的關鍵。」</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top; border-right: 1px solid rgba(255,255,255,0.05);">「<span class="red-highlight">台灣</span>是積極捍衛民主體制及尊重人權法治的現代民主國家，中、俄兩個極權國家任何扭曲<span class="red-highlight">台灣</span>主權地位的說法，都無法改變國際公認的兩岸現狀。」</td>
+                            <td style="vertical-align: top;">「這場足以改變<span class="red-highlight">台海</span>與整個世界戰略局勢的戰事，也可能影響<span class="red-highlight">台灣</span>、<span class="red-highlight">烏克蘭</span>與<span class="red-highlight">中國</span>的三角關係。」</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Table Metadata and Notes -->
+            <div class="meta-info">
+                <p><strong>資料來源：</strong>中央社、公視、TVBS、三立的網路新聞平台（烏俄戰事涉台新聞），擷取「聲援烏克蘭」相關報導段落。</p>
+                <p><strong>註：</strong>資料抓取使用 google site search 抓取報導中有「"俄" OR "烏"」以及「"台灣" OR "我國"」的報導，而後人工分類報導。</p>
+            </div>
+
+            <!-- Report Content -->
+            <section class="report-content">
+                <p>
+                    媒體藉由烏俄戰爭，重申台灣在地緣政治中的戰略身分。無論報導採用的是官方聲明或民間發言，皆有意凸顯<strong>「俄烏戰事促成國際社會更加重視台灣價值及關注中國侵台意圖」</strong>、<strong>「台灣在印太區域是為民主陣營對抗威權的關鍵制衡因素之一」</strong>等內容。
+                </p>
+            </section>
+
+        </div>
+
+        <!-- 捲動式影片：0616面向三 --><style></style><div id="gfghm">
+            
+            <div id="fb738c42-37cf-4a49-9a5e-5500d2e2fb9a"></div>
+            <script>
+              (function() {
+                var namespace = '@story-telling-reporter/react-embed-code-generator@2.2.20';
+                var pkg = 'scrollable-video';
+                if (typeof window != 'undefined') {
+                  if (!window.hasOwnProperty(namespace)) {
+                    window[namespace] = {};
+                  }
+                  if (window[namespace] && !window[namespace].hasOwnProperty(pkg)) {
+                    window[namespace][pkg] = [];
+                  }
+                  if (Array.isArray(window[namespace][pkg])) {
+                    var embedEl = document.getElementById('fb738c42-37cf-4a49-9a5e-5500d2e2fb9a');
+                    var scrollerEl = embedEl && embedEl.closest('.editor-fullscreen-scroller');
+                    var scrollerRef = scrollerEl ? { current: scrollerEl } : undefined;
+                    var data = {
+                      video: {
+                        src: 'https://lab-storytelling-storage.twreporter.org/files/----------332CGRwltasL.mp4',
+                        mobileSrc: '',
+                        duration: 6.5
+                      },
+                      captions: [
+                        {
+                          id: 'ildhh',
+                          width: 'narrow',
+                          alignment: 'left',
+                          startTime: 2.7,
+                          rawContentState: {
+                            blocks: [
+                              {
+                                key: '36g5',
+                                data: {},
+                                text: '隨著烏俄戰事的演進，從台灣媒體的烏俄報導中也能看見不同的涉美與涉中言論。烏俄戰爭這面鏡子，也反映了台灣社會對於「國家如何實質生存」的思辨。在提及台灣的烏俄戰爭報導中，近四成（36.1%）會同時討論台美中三方的關係。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [],
+                                inlineStyleRanges: [
+                                  { style: 'BOLD', length: 38, offset: 69 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 7, offset: 96 }
+                                ]
+                              },
+                              {
+                                key: 'aabak',
+                                data: {},
+                                text: '對此，游絲涵說：「新聞工作者與其所屬機構對於他們的『主要閱聽人模樣』都會有所想像。」他認為台灣的新聞媒體機構面對的目標受眾是在地閱聽人，所以媒體才會想要將烏俄戰爭與台灣建立關聯性，吸引閱聽人點閱。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [],
+                                inlineStyleRanges: []
+                              }
+                            ],
+                            entityMap: {}
+                          }
+                        },
+                        {
+                          id: 'geoim',
+                          width: 'narrow',
+                          alignment: 'left',
+                          startTime: 4.76,
+                          rawContentState: {
+                            blocks: [
+                              {
+                                key: '9vav6',
+                                data: {},
+                                text: '烏俄戰爭相關報導就台灣的「涉美關係」，存在「信任」與「懷疑」兩種論調。烏俄戰爭一開打，美方隨即展現對烏克蘭的支持，提供軍武援助，讓我國報導再次為對美軍售展現信心。美方實際並無派兵直接與俄羅斯交戰一事，加上川普二次就任美國總統後，對烏援助發生變化等，也可以從台灣媒體報導中看見懷疑美國的論調。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [],
+                                inlineStyleRanges: [
+                                  { style: 'BOLD', length: 26, offset: 8 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 4, offset: 21 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 4, offset: 26 }
+                                ]
+                              },
+                              {
+                                key: '8rbiq',
+                                data: {},
+                                text: '當這場國家的生存思辨延伸到如何面對中國時，資料透過媒體看見台灣社會對於抗中威脅的傾斜。超過八成的涉中報導（83.7%）皆聚焦於「如何針對中國備戰」，認為唯有增強實力才能確保實質和平，僅少數（16.3%）報導兩岸可以透過對話避免戰爭的相關內容。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [],
+                                inlineStyleRanges: [
+                                  { style: 'BOLD', length: 30, offset: 43 },
+                                  { style: 'BOLD', length: 4, offset: 111 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 2, offset: 70 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 4, offset: 111 }
+                                ]
+                              }
+                            ],
+                            entityMap: {}
+                          }
+                        }
+                      ],
+                      darkMode: true,
+                      secondsPer100vh: 1.5,
+                      uuid: 'fb738c42-37cf-4a49-9a5e-5500d2e2fb9a'
+                    };
+                    data.scrollerRef = scrollerRef;
+                    window[namespace][pkg].push(data);
+                  }
+                }
+              })()
+            </script>
+            <script type="text/javascript" defer crossorigin src="https://cdn.jsdelivr.net/npm/@story-telling-reporter/react-embed-code-generator@2.2.20/dist/scrollable-video.js"></script>
+          </div>
+
+        <!-- Section 3: Tables & Paragraphs below the third video -->
+        <div class="report-container">
+            
+            <!-- Third Quotes Comparison Table (涉美) -->
+            <div class="table-wrapper">
+                <table class="quotes-table two-col-table serif-font">
+                    <thead>
+                        <tr>
+                            <th colspan="2" style="text-align: center;">烏俄涉台報導中，同時提及美國的報導</th>
+                        </tr>
+                        <tr>
+                            <th style="width: 50%; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">信任美國的論調</th>
+                            <th style="width: 50%; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); border-left: 1px solid rgba(255,255,255,0.1);">懷疑美國的論調</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="vertical-align: top; border-right: 1px solid rgba(255,255,255,0.05);">「俄烏戰爭中，出現美製戰車無用論，軍事專家要外界別憂心，台灣國防勢必得繼續仰賴<span class="red-highlight">美國</span>。」</td>
+                            <td style="vertical-align: top;">「<span class="red-highlight">美國</span>絕不會派軍隊介入他國戰爭，烏克蘭如是、未來台灣亦如是；打代理人戰爭最符合<span class="red-highlight">美國</span>國家利益。」</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top; border-right: 1px solid rgba(255,255,255,0.05);">「<span class="red-highlight">美國</span>總統拜登宣布，將協助台灣抵禦中國，就如同支持烏克蘭。」</td>
+                            <td style="vertical-align: top;">「給<span class="red-highlight">美方</span>當槍使，朋友（建交國）越來越少，敵對的國家或人卻有增無減」</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top; border-right: 1px solid rgba(255,255,255,0.05);">「蕭美琴表示，台、美從俄烏戰爭學到經驗，台、美必須尋找領先的方法。」</td>
+                            <td style="vertical-align: top;">「專家警告西方若放棄烏克蘭，恐對台海安全造成示範效應。」</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top; border-right: 1px solid rgba(255,255,255,0.05);">「川普雖照三餐罵台灣、卻通過史上最多的飛彈軍售，讓台灣擁有比烏克蘭開戰4年打掉的軍火還多的武器。」</td>
+                            <td style="vertical-align: top;">「在川普的支持者看來，台灣正成為<span class="red-highlight">美國</span>戰略資產負債表上的負擔，需要盡快從帳面上移除。」</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Table Metadata and Notes -->
+            <div class="meta-info">
+                <p><strong>資料來源：</strong>中央社、公視、TVBS、三立的網路新聞平台（烏俄戰事涉台新聞），擷取「涉美」相關報導段落。</p>
+                <p><strong>註：</strong>資料抓取使用 google site search 抓取報導中有「"俄" OR "烏"」以及「"台灣" OR "我國"」的報導，而後人工分類報導段落。</p>
+            </div>
+
+            <!-- Report Content -->
+            <section class="report-content">
+                <p>
+                    在涉美的相關報導中，七成（72.1%）將台美劃為同盟。在報導中，可以看見信任的基礎正從口頭承諾走向實質。從早期美國總統拜登宣示「將協助台灣抵禦中國，就如同支持烏克蘭」，到副總統蕭美琴強調「台美必須從俄烏戰爭學到經驗、尋找領先方法」的防務深化、以及川普任內通過了史上最多的對台飛彈軍售，穩固台灣人對盟友的信心。然而，烏克蘭的艱困處境，也反應出另一種疑美思維。報導中直白地表示：「美國絕不會派軍隊介入他國戰爭，烏克蘭如是，未來台灣亦如是。」特別是隨著川普重返白宮，裁減對推動援助之變化，提出要求烏克蘭割地的和平協議後，懷疑美國的論調再次甚囂塵上。
+                </p>
+            </section>
+
+            <!-- Fourth Quotes Comparison Table (涉中) -->
+            <div class="table-wrapper" style="margin-top: 60px;">
+                <table class="quotes-table two-col-table serif-font">
+                    <thead>
+                        <tr>
+                            <th colspan="2" style="text-align: center;">烏俄涉台報導中，同時提及中國的報導</th>
+                        </tr>
+                        <tr>
+                            <th style="width: 50%; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">對中備戰的論調</th>
+                            <th style="width: 50%; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); border-left: 1px solid rgba(255,255,255,0.1);">對中避戰的論調</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="vertical-align: top; border-right: 1px solid rgba(255,255,255,0.05);">「烏俄戰爭超過300日未停止、<span class="red-highlight">中國</span>持續擴張威脅區域和平穩定、軍演後侵略企圖明顯，總統蔡英文強調，沒有人要戰爭，但和平不會從天而降。」</td>
+                            <td style="vertical-align: top;">「避戰是政府的重要施政目標，對話一定比對抗好。現在開始尋求對話機會，還能為台灣民眾爭取最大權益。」</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top; border-right: 1px solid rgba(255,255,255,0.05);">「<span class="red-highlight">中共</span>在吸取了俄烏戰爭的經驗以後，也加速擴大他的核威懾戰力，跟反介入以及區域拒止的能力，那麼針對這些發展，國軍在建軍備戰方面、在戰備訓練方面都有相對應的措施。」</td>
+                            <td style="vertical-align: top;">「<span class="red-highlight">台海</span>的本質比俄烏戰爭更嚴重，<span class="red-highlight">台海</span>如果發生戰爭，很可能就是第三次世界大戰，這是人類沒有辦法負擔的慘痛代價。」</td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top; border-right: 1px solid rgba(255,255,255,0.05);">「怎麼樣用最經濟的方式去嚇阻<span class="red-highlight">中國</span>，讓他們知道說，如果他們侵犯台灣，所面臨的損失、代價或難度，是遠超過烏克蘭的，這是我們接下來要做的。」</td>
+                            <td style="vertical-align: top;">「台灣要設法避戰，只要不挑釁<span class="red-highlight">對岸</span>，相信<span class="red-highlight">大陸</span>不會來打台灣，並要以烏克蘭的狀況為借鏡。」</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Table Metadata and Notes -->
+            <div class="meta-info">
+                <p><strong>資料來源：</strong>中央社、公視、TVBS、三立的網路新聞平台（烏俄戰事涉台新聞），擷取「涉中」相關報導段落。</p>
+                <p><strong>註：</strong>資料抓取使用 google site search 抓取報導中有「"俄" OR "烏"」以及「"台灣" OR "我國"」的報導，而後人工分類報導。</p>
+            </div>
+
+            <!-- Report Content -->
+            <section class="report-content">
+                <p>
+                    媒體大量記錄了台灣社會「看到俄烏戰況後，對台海局勢產生更強烈緊張感」的集體心理。專家與官方以此為正當性，推動「強化抗中威脅」的具體舉措——包含役期延長、新制教召與積極提升不對稱戰力。報導在潛意識中向大眾示警：烏俄戰爭可能成為中共動武的實驗場。相較之下，主張兩岸對話、和平避戰的報導篇幅雖然較少（16.3%），卻代表了台灣社會另一種對於戰爭殘酷性的深刻反省。
+                </p>
+            </section>
+
+        </div>
+
+        <!-- 捲動式影片：0616結尾 --><style></style><div id="aebcf">
+            
+            <div id="c4ebeadd-3422-48c3-869f-7a119a1525a9"></div>
+            <script>
+              (function() {
+                var namespace = '@story-telling-reporter/react-embed-code-generator@2.2.20';
+                var pkg = 'scrollable-video';
+                if (typeof window != 'undefined') {
+                  if (!window.hasOwnProperty(namespace)) {
+                    window[namespace] = {};
+                  }
+                  if (window[namespace] && !window[namespace].hasOwnProperty(pkg)) {
+                    window[namespace][pkg] = [];
+                  }
+                  if (Array.isArray(window[namespace][pkg])) {
+                    var embedEl = document.getElementById('c4ebeadd-3422-48c3-869f-7a119a1525a9');
+                    var scrollerEl = embedEl && embedEl.closest('.editor-fullscreen-scroller');
+                    var scrollerRef = scrollerEl ? { current: scrollerEl } : undefined;
+                    var data = {
+                      video: {
+                        src: 'https://lab-storytelling-storage.twreporter.org/files/-------iHQH-8QvD5oW.mp4',
+                        mobileSrc: '',
+                        duration: 8
+                      },
+                      captions: [
+                        {
+                          id: 'ppeag',
+                          width: 'narrow',
+                          alignment: 'left',
+                          startTime: 1.2,
+                          rawContentState: {
+                            blocks: [
+                              {
+                                key: 'cp0i2',
+                                data: {},
+                                text: '將這些涉美、涉中的戰略報導按「媒體來源」拆解時。作為台灣最受信任的公共媒體——公視反而在「信任美國、對中備戰」的報導量上，高過其他媒體。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [],
+                                inlineStyleRanges: []
+                              },
+                              {
+                                key: '5jlj2',
+                                data: {},
+                                text: '而TVBS則相對其他媒體在「懷疑美國、對中避戰」的避險論述上有更多篇幅。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [],
+                                inlineStyleRanges: []
+                              }
+                            ],
+                            entityMap: {}
+                          }
+                        },
+                        {
+                          id: 'acqqp',
+                          width: 'wide',
+                          alignment: 'center',
+                          startTime: 4.4,
+                          rawContentState: {
+                            blocks: [
+                              {
+                                key: '7mu5p',
+                                data: {},
+                                text: '透過台灣媒體將烏俄戰爭與台灣連結的報導可以得知，我國在實質層面，正積極地將烏克蘭的不對稱戰術內化，催生了無人機國家隊、重啟一年期兵役，借鏡烏俄戰爭以強化我國國防與民防；在國際舞台上，我們也展現出積極聲援烏克蘭面貌，並全球民主陣營的角色為敲門磚，在國際場域中，把台海安全放進國際重要議題中。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [],
+                                inlineStyleRanges: []
+                              }
+                            ],
+                            entityMap: {}
+                          }
+                        },
+                        {
+                          id: 'egigm',
+                          width: 'wide',
+                          alignment: 'center',
+                          startTime: 5.6,
+                          rawContentState: {
+                            blocks: [
+                              {
+                                key: 'b52et',
+                                data: {},
+                                text: '然而，烏俄戰事這面鏡子不僅照出了台灣對外的防禦盔甲，也生生照出了島嶼內部的戰略路線撕裂。當我們看向涉及美中的報導時，可以看見台灣人在面臨大國博弈與強鄰進逼時並未達成共識。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [],
+                                inlineStyleRanges: [
+                                  { style: 'BOLD', length: 36, offset: 49 }
+                                ]
+                              },
+                              {
+                                key: '7t17n',
+                                data: {},
+                                text: '當「今日烏克蘭，明日台灣」的口號躍上新聞版面，映照的是台灣人正在用遠方戰火告誡自身的集體焦慮。游絲涵解釋，這句口號其實最初出現於社群網絡，隨後才被媒體採用，「那是不是媒體某種程度也被這個風向給帶到了？」',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [],
+                                inlineStyleRanges: [
+                                  { style: 'BOLD', length: 12, offset: 1 },
+                                  { style: 'BOLD', length: 18, offset: 59 }
+                                ]
+                              }
+                            ],
+                            entityMap: {}
+                          }
+                        },
+                        {
+                          id: 'bfdil',
+                          width: 'wide',
+                          alignment: 'center',
+                          startTime: 6.8,
+                          rawContentState: {
+                            blocks: [
+                              {
+                                key: '4sip3',
+                                data: {},
+                                text: '四年過去了，烏克蘭的煙硝依舊，而台灣在這面無情的鏡子前，也看到了內部認同的拉鋸。遠方的戰火逼著這座島嶼在恐懼的煙硝背後，看清現實，思考屬於台灣人自己的生存答案。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [],
+                                inlineStyleRanges: []
+                              }
+                            ],
+                            entityMap: {}
+                          }
+                        }
+                      ],
+                      darkMode: true,
+                      secondsPer100vh: 1.5,
+                      uuid: 'c4ebeadd-3422-48c3-869f-7a119a1525a9'
+                    };
+                    data.scrollerRef = scrollerRef;
+                    window[namespace][pkg].push(data);
+                  }
+                }
+              })()
+            </script>
+            <script type="text/javascript" defer crossorigin src="https://cdn.jsdelivr.net/npm/@story-telling-reporter/react-embed-code-generator@2.2.20/dist/scrollable-video.js"></script>
+          </div>
+
+        <!-- Footer -->
+        <footer>
+            <div style="max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 0.8rem; color: var(--text-secondary); text-align: center;">
+                <p>課程｜資料新聞學課堂作業</p>
+                <p>製作｜李香霆</p>
+                <p>製作日期｜2026年6月</p>
+                <p>備註｜文中插圖皆經過AI變造</p>
+                <p>資料來源｜中央社、公視、TVBS、三立新聞網烏俄涉台相關報導；受訪者訪談</p>
+                <p style="margin-top: 8px; max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                    研究方法｜資料蒐集採用google site search抓取報導中有「"俄" OR "烏"」以及「"台灣" OR "我國"」的報導，而後人工分類報導。，資料集：<a href="https://docs.google.com/spreadsheets/d/1OTXg31Qz-LtShi8Hcfva03sUE00e4B_hwAt9Qk6iDsg/edit?usp=sharing" target="_blank" style="color: var(--text-primary); text-decoration: underline; word-break: break-all;">https://docs.google.com/spreadsheets/d/1OTXg31Qz-LtShi8Hcfva03sUE00e4B_hwAt9Qk6iDsg/edit?usp=sharing</a>
+                </p>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>
