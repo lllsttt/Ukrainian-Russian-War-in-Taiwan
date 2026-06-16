@@ -644,36 +644,4 @@
                         </tr>
                         <tr>
                             <td style="vertical-align: top; border-right: 1px solid rgba(255,255,255,0.05);">「<span class="red-highlight">俄烏</span>戰事促成國際社會更加重視<span class="red-highlight">台灣</span>價值及關注<span class="red-highlight">中國</span>侵台意圖，<span class="red-highlight">台灣</span>在印太區域活動能量儼然成為民主陣營對抗威權影響力的關鍵制衡因素之一。」</td>
-                            <td style="vertical-align: top;">「我們有能力去援助其他人，讓人知道我們有同樣的價值觀，並藉此累積技術、人脈，這都是在重要狀況下，我們不會孤立無援的關鍵。」</td>
-                        </tr>
-                        <tr>
-                            <td style="vertical-align: top; border-right: 1px solid rgba(255,255,255,0.05);">「<span class="red-highlight">台灣</span>是積極捍衛民主體制及尊重人權法治的現代民主國家，中、俄兩個極權國家任何扭曲<span class="red-highlight">台灣</span>主權地位的說法，都無法改變國際公認的兩岸現狀。」</td>
-                            <td style="vertical-align: top;">「這場足以改變<span class="red-highlight">台海</span>與整個世界戰略局勢的戰事，也可能影響<span class="red-highlight">台灣</span>、<span class="red-highlight">烏克蘭</span>與<span class="red-highlight">中國</span>的三角關係。」</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Table Metadata and Notes -->
-            <div class="meta-info">
-                <p><strong>資料來源：</strong>中央社、公視、TVBS、三立的網路新聞平台（烏俄戰事涉台新聞），擷取「聲援烏克蘭」相關報導段落。</p>
-                <p><strong>註：</strong>資料抓取使用 google site search 抓取報導中有「"俄" OR "烏"」以及「"台灣" OR "我國"」的報導，而後人工分類報導。</p>
-            </div>
-
-            <!-- Report Content -->
-            <section class="report-content">
-                <p>
-                    媒體藉由烏俄戰爭，重申台灣在地緣政治中的戰略身分。無論報導採用的是官方聲明或民間發言，皆有意凸顯<strong>「俄烏戰事促成國際社會更加重視台灣價值及關注中國侵台意圖」</strong>、<strong>「台灣在印太區域是為民主陣營對抗威權的關鍵制衡因素之一」</strong>等內容。
-                </p>
-            </section>
-
-        </div>
-
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2026 資料新聞網頁設計專題. All Rights Reserved.</p>
-        </footer>
-
-    </div>
-</body>
-</html>
+                            <td style="vertical-align: top;">「我們有能力去援助其他人，讓人知道我們有同樣的價值觀，並藉此累積技術、人脈，這都是在重要狀況下，我們不會孤立無援的
