@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日烏克蘭，明日台灣？——資料新聞報導</title>
+    
+    <!-- Google Fonts for professional Chinese typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           🎨 DATA JOURNALISM STYLE SHEET - COFFEE THEME (COMBINED STYLE)
+           ========================================================================== */
+        :root {
+            --bg-color-deep: #140d0a;         /* 極深咖啡豆色 */
+            --bg-color-main: #1e130f;         /* 主背景深咖啡色 */
+            --bg-color-light: #2c1d17;        /* 淺咖啡褐 */
+            --text-primary: #f5f0eb;          /* 暖乳白 */
+            --text-secondary: #c7bcae;        /* 暖灰褐（次要字） */
+            --primary-red: #ff5252;           /* 戰火明紅（高對比，非死紅） */
+            --accent-gold: #ffffff;           /* 警示白色 */
+            --border-color: rgba(255, 255, 255, 0.08);
+            --glass-bg: rgba(30, 19, 15, 0.7);
+            --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        /* Base Settings */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: var(--bg-color-deep);
+        }
+        body {
+            color: var(--text-primary);
+            font-family: 'Noto Sans TC', sans-serif;
+            line-height: 1.8;
+        }
+        .editor-fullscreen-scroller {
+            width: 100%;
+            height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background: radial-gradient(circle at center, var(--bg-color-main) 0%, var(--bg-color-deep) 100%);
+            padding-bottom: 80px;
+        }
+        /* Typography Helpers */
+        .serif-font {
+            font-family: 'Noto Serif TC', serif;
+        }
+        /* Main Container */
+        .report-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            text-align: center; /* Centered layout */
+        }
+        /* Title Section */
+        .report-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--text-primary);
+            margin-bottom: 40px;
+            margin-top: 20px;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        .report-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-red), transparent);
+        }
+        /* Table Design */
+        .table-wrapper {
+            margin: 40px 0 20px 0;
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .quotes-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left; /* Left align for readable text inside table */
+        }
+        .quotes-table th {
+            background-color: rgba(255, 82, 82, 0.08);
+            color: var(--accent-gold);
+            padding: 18px 24px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+            letter-spacing: 1px;
+            text-align: center;
+        }
+        .quotes-table td {
+            padding: 16px 24px;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-primary);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition-smooth);
+        }
+        .quotes-table tr:hover td {
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+        /* Red Keyword Highlight */
+        .red-highlight {
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+        /* Table Source & Note */
+        .meta-info {
+            text-align: left;
+            margin: 0 auto 50px auto;
+            max-width: 850px;
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 4px solid var(--accent-gold);
+            padding: 18px 24px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.01);
+        }
+        .meta-info p {
+            margin-bottom: 8px;
+        }
+        .meta-info p:last-child {
+            margin-bottom: 0;
+        }
+        .meta-info strong {
+            color: var(--text-primary);
+        }
+        /* Body Text Section */
+        .report-content {
+            max-width: 760px;
+            margin: 40px auto 0 auto;
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--text-primary);
+            text-align: left; /* Left-aligned paragraphs */
+        }
+        .report-content p {
+            margin-bottom: 35px;
+            letter-spacing: 0.5px;
+        }
+        /* Enlarged Bold Red Thought Highlight */
+        .emphasis-mind {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--primary-red);
+            text-shadow: 0 0 12px rgba(255, 82, 82, 0.25);
+            display: inline-block;
+            padding: 0 8px;
+            margin: 5px 0;
+        }
+        /* Footer Section */
+        footer {
+            margin-top: 100px;
+            border-top: 1px solid var(--border-color);
+            padding: 45px 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .report-title {
+                font-size: 2rem;
+            }
+            .quotes-table th, .quotes-table td {
+                padding: 12px 16px;
+                font-size: 0.95rem;
+            }
+            .meta-info {
+                padding: 14px 18px;
+                font-size: 0.85rem;
+            }
+            .report-content {
+                font-size: 1.05rem;
+                line-height: 1.8;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="editor-fullscreen-scroller">
+        <!-- 捲動式影片：0616報導開頭 --><style></style><div id="jhqgj">
+            
+            <div id="95ddd9fe-f549-433a-9c7c-81c28cd31390"></div>
+            <script>
+              (function() {
+                var namespace = '@story-telling-reporter/react-embed-code-generator@2.2.20';
+                var pkg = 'scrollable-video';
+                if (typeof window != 'undefined') {
+                  if (!window.hasOwnProperty(namespace)) {
+                    window[namespace] = {};
+                  }
+                  if (window[namespace] && !window[namespace].hasOwnProperty(pkg)) {
+                    window[namespace][pkg] = [];
+                  }
+                  if (Array.isArray(window[namespace][pkg])) {
+                    var embedEl = document.getElementById('95ddd9fe-f549-433a-9c7c-81c28cd31390');
+                    var scrollerEl = embedEl && embedEl.closest('.editor-fullscreen-scroller');
+                    var scrollerRef = scrollerEl ? { current: scrollerEl } : undefined;
+                    var data = {
+                      video: {
+                        src: 'https://lab-storytelling-storage.twreporter.org/files/-------------sA1lvpYEdkiw.mp4',
+                        mobileSrc: '',
+                        duration: 8
+                      },
+                      captions: [
+                        {
+                          id: 'abimb',
+                          width: 'wide',
+                          alignment: 'center',
+                          startTime: 4.74,
+                          rawContentState: {
+                            blocks: [
+                              {
+                                key: '6audr',
+                                data: {},
+                                text: '2022年2月24日，當俄羅斯戰車駛入烏克蘭領土，遠在八千公里外的台灣，也透過媒體即時收到大量戰事相關消息。這場第二次世界大戰結束以來歐洲最大規模的軍事衝突，至今已推進到第四個年頭。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [],
+                                inlineStyleRanges: []
+                              }
+                            ],
+                            entityMap: {}
+                          }
+                        },
+                        {
+                          id: 'kdonf',
+                          width: 'wide',
+                          alignment: 'center',
+                          startTime: 6,
+                          rawContentState: {
+                            blocks: [
+                              {
+                                key: '7avfv',
+                                data: {},
+                                text: '而台灣人看這場戰爭，除了同情烏克蘭的遭遇，也憂心同樣面對著強鄰威脅的自己。「今日烏克蘭，明日台灣」的口號於是開始在社群平台上傳播開來，顯現台灣人反思自身需要加強防衛抵抗境外勢力入侵的決心。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [
+                                  { style: 'BOLD', length: 12, offset: 37 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 12, offset: 37 }
+                                ],
+                                inlineStyleRanges: []
+                              }
+                            ],
+                            entityMap: {}
+                          }
+                        },
+                        {
+                          id: 'pbgdc',
+                          width: 'wide',
+                          alignment: 'center',
+                          startTime: 7.21,
+                          rawContentState: {
+                            blocks: [
+                              {
+                                key: 'fjq2d',
+                                data: {},
+                                text: '本報導蒐集台灣四家媒體——國家通訊社中央社、公共媒體公視新聞網、前兩大泛藍與泛綠電視媒體TVBS及三立的網路新聞平台——在過去四年間（2022/02/24-2026/02/24）所有提及「台灣」的烏俄戰爭報導。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [{ key: 0, length: 45, offset: 60 }],
+                                inlineStyleRanges: [
+                                  { style: 'BOLD', length: 8, offset: 13 },
+                                  { style: 'BOLD', length: 9, offset: 22 },
+                                  { style: 'BOLD', length: 16, offset: 32 },
+                                  { style: 'BOLD', length: 2, offset: 49 },
+                                  { style: 'BOLD', length: 45, offset: 60 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 3, offset: 18 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 5, offset: 26 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 4, offset: 44 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 2, offset: 49 },
+                                  { style: 'FONT_COLOR_#FFBD59', length: 13, offset: 91 }
+                                ]
+                              },
+                              {
+                                key: '4idoa',
+                                data: {},
+                                text: '透過分析報導內容，看台灣媒體如何透過萬里戰火，照見自身的國防安全、外交身分，以及國內撕裂的安全戰略路線。',
+                                type: 'unstyled',
+                                depth: 0,
+                                entityRanges: [],
+                                inlineStyleRanges: []
+                              }
+                            ],
+                            entityMap: {
+                              0: {
+                                data: {
+                                  rawContentState: {
+                                    blocks: [
+                                      {
+                                        key: '7om2o',
+                                        data: {},
+                                        text: '註：資料抓取使用google site search抓取報導中有「\"俄\" OR \"烏\"」以及「“台灣\" OR “我國\"」的報導，而後人工標籤與擷取報導段落。',
+                                        type: 'unstyled',
+                                        depth: 0,
+                                        entityRanges: [],
+                                        inlineStyleRanges: []
+                                      }
+                                    ],
+                                    entityMap: {}
+                                  }
+                                },
+                                type: 'ANNOTATION',
+                                mutability: 'MUTABLE'
+                              }
+                            }
+                          }
+                        }
+                      ],
+                      darkMode: true,
+                      secondsPer100vh: 1.5,
+                      uuid: '95ddd9fe-f549-433a-9c7c-81c28cd31390'
+                    };
+                    data.scrollerRef = scrollerRef;
+                    window[namespace][pkg].push(data);
+                  }
+                }
+              })()
+            </script>
+            <script type="text/javascript" defer crossorigin src="https://cdn.jsdelivr.net/npm/@story-telling-reporter/react-embed-code-generator@2.2.20/dist/scrollable-video.js"></script>
+          </div>
+        <!-- Main Content Container -->
+        <main class="report-container">
+            
+            <!-- Document Title -->
+            <h1 class="report-title serif-font">今日烏克蘭，明日台灣？</h1>
+            
+            <!-- Quotes Comparison Table -->
+            <div class="table-wrapper">
+                <table class="quotes-table serif-font">
+                    <thead>
+                        <tr>
+                            <th style="text-align: center;">涉台新聞對比報導段落擷取</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>「<span class="red-highlight">俄羅斯</span>以大量無人機攻擊<span class="red-highlight">烏克蘭</span>，對<span class="red-highlight">台灣</span>是一記警鐘，若<span class="red-highlight">中國</span>對台動武，類似景象也可能出現在<span class="red-highlight">台灣</span>。」</td>
+                        </tr>
+                        <tr>
+                            <td>「如果<span class="red-highlight">俄羅斯</span>打<span class="red-highlight">烏克蘭</span>幾乎是輾壓，可能幾天內結束，那<span class="red-highlight">中國</span>如果打<span class="red-highlight">台灣</span>要幾天？」</td>
+                        </tr>
+                        <tr>
+                            <td>「對<span class="red-highlight">台灣</span>人來說，普丁對<span class="red-highlight">烏克蘭</span>做的事，可能就是習近平將對<span class="red-highlight">台灣</span>做的事。」</td>
+                        </tr>
+                        <tr>
+                            <td>「當<span class="red-highlight">俄羅斯</span>攻打<span class="red-highlight">烏克蘭</span>的同時，有類似狀況的<span class="red-highlight">中國</span>與<span class="red-highlight">台灣</span>是否也可能一不小心就『擦槍走火』」</td>
+                        </tr>
+                        <tr>
+                            <td>「<span class="red-highlight">俄烏</span>戰爭預告<span class="red-highlight">中國</span>怎麼對付<span class="red-highlight">台灣</span>，如何防範<span class="red-highlight">台海</span>局勢變化？」</td>
+                        </tr>
+                        <tr>
+                            <td>「<span class="red-highlight">烏俄</span>這一戰，可能會是<span class="red-highlight">台灣</span>與<span class="red-highlight">中國大陸</span>的借鏡」</td>
+                        </tr>
+                        <tr>
+                            <td>「<span class="red-highlight">烏克蘭</span>戰事引發<span class="red-highlight">台海</span>安全聯想。」</td>
+                        </tr>
+                        <tr>
+                            <td>「隨著<span class="red-highlight">俄烏</span>戰爭越演越烈，<span class="red-highlight">台灣</span>與<span class="red-highlight">台海</span>安全也備受各界關注。」</td>
+                        </tr>
+                        <tr>
+                            <td>「<span class="red-highlight">中國</span>亦步亦趨地學習<span class="red-highlight">俄羅斯</span>的手法，不斷對外擴張，是極為明顯的事。」</td>
+                        </tr>
+                        <tr>
+                            <td>「<span class="red-highlight">烏克蘭</span>與<span class="red-highlight">台灣</span>在某種程度上有著相似的處境。」</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Table Metadata and Notes -->
+            <div class="meta-info">
+                <p><strong>資料來源：</strong>中央社、公視、TVBS、三立的網路新聞平台（烏俄戰事涉台新聞），擷取「將烏俄戰況對比台海」相關報導段落。</p>
+                <p><strong>註：</strong>資料抓取使用 google site search 抓取報導中有「"俄" OR "烏"」以及「"台灣" OR "我國"」的報導，而後人工篩選報導段落。</p>
+            </div>
+            <!-- Center Aligned Inner Body Text Section -->
+            <section class="report-content">
+                <p>
+                    瀏覽近四年（2022-2026）來的國際新聞，你可能對上表中的語句感到似曾相識。這些報導內容將八千公里外的砲火，生硬地與台海兩岸的緊張局勢劃上等號。當我們抱著警戒與焦慮的心情瀏覽完這上百篇的新聞，除了萌生「<span class="emphasis-mind">俄羅斯＝中國、烏克蘭＝台灣</span>」的思緒外，我們真的能從烏俄戰事中看出台灣值得學習之處嗎？
+                </p>
+                <p>
+                    媒體作為傳遞資訊的角色，要如何把烏克蘭的實戰經驗，轉化為台灣在國防安全的參考？Ａ報導今天說烏克蘭靠無人機扭轉劣勢，台灣得趕緊精進軍事科技；Ｂ報導隔天稱武器是其次，烏克蘭人的抗敵意志才是關鍵；到了Ｃ報導，又變成政壇間討論教召制度與兵役延長的口水之戰。
+                </p>
+                <p>
+                    這些「借鏡」七零八落，散落在各家媒體的報導中。所以此專題藉由烏俄戰爭討論台灣國防與民防安全的報導，從四大面向搜集了13個熱門話題。
+                </p>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 資料新聞網頁設計專題. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
